@@ -1,3 +1,7 @@
+// app/layout.tsx
+import '@/app/ui/global.css';
+import { inter } from '@/app/ui/fonts'; // ★インポート
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +9,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      {/* ★bodyタグにinter.classNameと、Tailwindのantialiasedクラスを適用 */}
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
